@@ -1,0 +1,11 @@
+form {
+	@apply flex items-center gap-4 mb-9;
+}
+
+form input {
+	@apply flex-1 text-stone-600 py-2 px-4 border border-stone-400 focus:outline focus:outline-offset-0 focus:outline-stone-600 focus:outline-1 rounded-md bg-transparent;
+}
+
+form button {
+	@apply py-2 px-4 border border-stone-600 rounded-md bg-transparent hover:text-white hover:bg-stone-600 disabled:border-slate-300 disabled:bg-slate-300 disabled:text-white;
+}

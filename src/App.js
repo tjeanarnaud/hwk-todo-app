@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useRef, useState } from 'react'
+
+import './App.css'
+import TodoForm from './components/todo-form'
+import TodoList from './components/todo-list'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className='app'>
+			<h1>Todo App with React</h1>
+			<TodoForm />
+			<TodoList />
+		</div>
+	)
 }
 
-export default App;
+export default App

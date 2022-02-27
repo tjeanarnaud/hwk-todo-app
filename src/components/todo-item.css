@@ -1,0 +1,55 @@
+li {
+	@apply w-full flex items-center justify-between gap-3 p-4 border border-slate-500 rounded-md;
+}
+
+li label {
+	@apply flex-1 flex items-center gap-6;
+}
+
+li label input {
+	@apply w-4 h-4 m-0;
+}
+
+li label span {
+	@apply w-full text-slate-600;
+}
+
+li button {
+	@apply w-6 h-6 flex items-center justify-items-stretch p-0 text-slate-500 border border-slate-500 rounded transition-all duration-100 ease-in;
+}
+
+li p {
+	@apply flex-1 ml-4;
+}
+
+li form {
+	@apply flex-1 m-0;
+}
+
+li form input {
+	@apply h-6 px-4 py-0 bg-slate-200 border-none rounded focus:bg-transparent focus:border-none focus:outline-none;
+}
+
+li form .btn-edited {
+	@apply p-[1px] hover:border-sky-700 hover:bg-sky-700 hover:text-white;
+}
+
+li .text-checked {
+	@apply text-lime-700 line-through;
+}
+
+li button svg {
+	@apply w-full h-full m-0;
+}
+
+li .btn-checked {
+	@apply text-lime-700 border-none;
+}
+
+li .btn-edit {
+	@apply p-[1px] hover:border-sky-700 hover:bg-sky-700 hover:text-white;
+}
+
+li .btn-remove {
+	@apply p-[1px] hover:border-rose-700 hover:bg-rose-700 hover:text-white;
+}
