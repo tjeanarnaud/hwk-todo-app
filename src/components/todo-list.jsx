@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 
-import { useTodos } from '../todos-context'
+import { useTodos } from '../useTodos'
 import TodoItem from './todo-item'
 
 import './todo-list.css'
 
 const TodoList = () => {
 	const data = useTodos()
-	// const todos = data.todos
 
 	return (
 		<>

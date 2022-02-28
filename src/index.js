@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { TodosProvider } from './todos-context'
+import { TodosProvider } from './useTodos'
 
 ReactDOM.render(
 	<TodosProvider>
