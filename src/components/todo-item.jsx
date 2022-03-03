@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
 import {
+	CheckIcon,
 	TrashIcon,
 	PencilIcon,
 	RefreshIcon,
-	CheckCircleIcon,
 } from '@heroicons/react/solid'
 import { useTodos } from '../useTodos'
 
@@ -41,18 +41,18 @@ const TodoItem = ({ id, name, isDone }) => {
 		data.setTodos(data.todos)
 	}
 
-	const removeTodo = () => {
+	const deleteTodo = () => {
 		const updatedTodos = [...data.todos].filter((item) => item.id !== id)
 		data.setTodos(updatedTodos)
 	}
 
 	return (
-		<li>
+		<div className={`list__item${checked ? ' list__item--checked' : ''}`}>
 			<button
-				className={checked ? 'btn-checked' : 'w-5 h-5 rounded-full'}
+				className={checked ? 'btn btn--checked' : 'btn'}
 				onClick={checkTodo}
 			>
-				{checked && <CheckCircleIcon />}
+				<CheckIcon />
 			</button>
 
 			{show ? (
@@ -62,23 +62,30 @@ const TodoItem = ({ id, name, isDone }) => {
 						value={text}
 						onChange={(e) => setText(e.target.value)}
 					/>
-					<button type='submit' className='btn-edited'>
+					<button type='submit' className='btn btn--update'>
 						<RefreshIcon />
 					</button>
 				</form>
 			) : (
 				<>
-					<p className={checked ? 'text-checked' : ''}>{text}</p>
-					<button className='btn-edit' onClick={() => setShow(!show)}>
-						<PencilIcon />
-					</button>
+					<div
+						className={`item__title${checked ? ' item__title--checked' : ''}`}
+					>
+						{text}
+					</div>
+
+					{!checked && (
+						<button className='btn btn--edited' onClick={() => setShow(!show)}>
+							<PencilIcon />
+						</button>
+					)}
 				</>
 			)}
 
-			<button onClick={removeTodo} className='btn-remove'>
+			<button className='btn btn--delete' onClick={deleteTodo}>
 				<TrashIcon />
 			</button>
-		</li>
+		</div>
 	)
 }
 

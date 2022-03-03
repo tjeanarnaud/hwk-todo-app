@@ -1,11 +1,15 @@
-form {
-	@apply flex items-center gap-4 mb-9;
+.form__create {
+	@apply flex items-center justify-between gap-2 bg-black-90 p-2 mb-9;
 }
 
-form input {
-	@apply flex-1 text-stone-600 py-2 px-4 border border-stone-400 focus:outline focus:outline-offset-0 focus:outline-stone-600 focus:outline-1 rounded-md bg-transparent;
+.form__create input {
+	@apply flex-1;
 }
 
-form button {
-	@apply py-2 px-4 border border-stone-600 rounded-md bg-transparent hover:text-white hover:bg-stone-600 disabled:border-slate-300 disabled:bg-slate-300 disabled:text-white;
+.form__create button {
+	@apply disabled:bg-slate-800 disabled:text-slate-600;
+}
+
+.form__create button svg {
+	@apply w-7 h-7 m-0;
 }

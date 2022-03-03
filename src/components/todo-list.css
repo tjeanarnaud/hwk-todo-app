@@ -1,3 +1,15 @@
-ul {
-	@apply w-full flex flex-col items-center gap-4;
+.list {
+	@apply grid grid-cols-1 auto-rows-auto space-y-2;
+}
+
+.list__item {
+	@apply flex items-center justify-between gap-2 p-2 bg-black-90;
+}
+
+.list__item--checked {
+	@apply bg-opacity-50;
+}
+
+.list__item form {
+	@apply flex-1 flex items-center justify-between gap-2 mb-0;
 }

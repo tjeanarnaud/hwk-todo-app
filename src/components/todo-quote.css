@@ -1,0 +1,11 @@
+blockquote {
+	@apply relative bg-black-90 font-satisfy px-24 py-16 mb-9;
+}
+
+blockquote p {
+	@apply md:text-2xl md:mb-8 before:absolute before:top-14 before:left-10 before:content-['\201C'] before:text-9xl after:absolute after:bottom-6 after:right-12 after:content-['\201D'] after:text-9xl;
+}
+
+blockquote cite {
+	@apply md:text-2xl font-semibold;
+}

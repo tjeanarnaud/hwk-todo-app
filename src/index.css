@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Open+Sans:wght@400;500;600;700&family=Passion+One:wght@400;700&family=Saira+Condensed:wght@400;500;600;700&family=Satisfy&display=swap');
+
 @layer base {
 	body {
-		@apply font-mono text-base text-stone-800;
+		@apply font-saira text-base text-slate-100 bg-black-0;
 	}
 
 	h1 {
@@ -16,16 +18,40 @@
 	}
 
 	button {
-		@apply cursor-pointer;
+		@apply cursor-pointer transition duration-200 ease-in;
+	}
+
+	input {
+		@apply h-12 text-lg text-slate-600 font-medium px-6 bg-black-0 border-none focus:outline-none placeholder:text-slate-700 focus:text-slate-300 placeholder:font-medium;
 	}
 }
 
 @layer components {
 	.btn {
-		@apply text-stone-600 p-[2px] border border-stone-600 bg-transparent rounded hover:text-white hover:bg-stone-600;
+		@apply w-12 h-12 grid place-items-center text-black-100 hover:text-gray-300 bg-black-60 disabled:bg-slate-800 disabled:text-slate-600;
 	}
 
 	.btn > svg {
-		@apply w-5 h-5 m-0;
+		@apply w-6 h-6 m-0;
+	}
+
+	.btn--create {
+		@apply bg-teal bg-opacity-60 hover:bg-opacity-100;
+	}
+
+	.btn--update {
+		@apply bg-lime-700 bg-opacity-60 hover:bg-opacity-100;
+	}
+
+	.btn--checked {
+		@apply bg-amazon text-gray-300 bg-opacity-100;
+	}
+
+	.btn--edited {
+		@apply bg-gold bg-opacity-60 hover:bg-opacity-100;
+	}
+
+	.btn--delete {
+		@apply bg-ruby bg-opacity-60 hover:bg-opacity-100;
 	}
 }

@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import { useTodos } from '../useTodos'
+import { PlusIcon } from '@heroicons/react/solid'
 
 import './todo-form.css'
 
 const TodoForm = () => {
 	const data = useTodos()
 
-	const [input, setInput] = useState('')
+	const [title, setTitle] = useState('')
 
 	const handleChange = (e) => {
-		setInput(e.target.value)
+		setTitle(e.target.value)
 	}
 
 	const handleSubmit = (e) => {
@@ -17,32 +18,33 @@ const TodoForm = () => {
 
 		const todo = {
 			id: Math.floor(Math.random() * 10000),
-			name: input,
+			name: title,
 			isDone: false,
 			createdAt: Date.now(),
 		}
 
 		data.setTodos([todo, ...data.todos])
 
-		setInput('')
+		setTitle('')
 	}
 
 	return (
-		<>
-			<form>
-				<input
-					type='text'
-					name='text'
-					value={input}
-					placeholder='Enter a new todo'
-					onChange={handleChange}
-				/>
+		<form className='form__create'>
+			<input
+				type='text'
+				value={title}
+				placeholder='Enter a new todo'
+				onChange={handleChange}
+			/>
 
-				<button onClick={handleSubmit} disabled={!input.trim()}>
-					Add a Todo
-				</button>
-			</form>
-		</>
+			<button
+				onClick={handleSubmit}
+				disabled={!title.trim()}
+				className='btn btn--create'
+			>
+				<PlusIcon />
+			</button>
+		</form>
 	)
 }
 

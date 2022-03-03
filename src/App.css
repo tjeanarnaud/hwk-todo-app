@@ -2,6 +2,18 @@
 	@apply max-w-3xl py-10 mx-auto;
 }
 
-.app h1 {
+h1 {
 	@apply text-center mb-9;
 }
+/* 
+blockquote {
+	@apply relative text-xl py-8 pl-20 pr-6 mb-12 bg-gray-100 border-l-8 border-lime-700 before:absolute before:content-['\201C'] before:font-['Arial'] before:text-9xl before:text-lime-700 before:top-2 before:left-4;
+}
+
+blockquote p {
+	@apply font-medium italic text-slate-600 mb-5;
+}
+
+blockquote cite {
+	@apply font-bold not-italic text-lg;
+} */

@@ -9,15 +9,11 @@ const TodoList = () => {
 	const data = useTodos()
 
 	return (
-		<>
-			<h2 className='mb-6'>What's the plan for today?</h2>
-
-			<ul>
-				{data.todos.map((todo) => (
-					<TodoItem key={todo.id} {...todo} />
-				))}
-			</ul>
-		</>
+		<div className='list'>
+			{data.todos.map((todo) => (
+				<TodoItem key={todo.id} {...todo} />
+			))}
+		</div>
 	)
 }
 
