@@ -1,5 +1,5 @@
 .form__create {
-	@apply flex items-center justify-between gap-2 bg-black-90 p-2 mb-9;
+	@apply flex items-center justify-between gap-2 bg-black-90 p-2 rounded-sm mb-9;
 }
 
 .form__create input {

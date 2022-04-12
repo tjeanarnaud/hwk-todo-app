@@ -5,43 +5,40 @@ import { PlusIcon } from '@heroicons/react/solid'
 import './todo-form.css'
 
 const TodoForm = () => {
-	const data = useTodos()
+	const { todos, setTodos } = useTodos()
 
-	const [title, setTitle] = useState('')
+	console.log(todos)
+
+	const [text, setText] = useState('')
 
 	const handleChange = (e) => {
-		setTitle(e.target.value)
+		setText(e.target.value)
 	}
 
-	const handleSubmit = (e) => {
+	const createTodo = (e) => {
 		e.preventDefault()
 
 		const todo = {
-			id: Math.floor(Math.random() * 10000),
-			name: title,
-			isDone: false,
+			id: Date.now(),
+			task: text,
+			isChecked: false,
 			createdAt: Date.now(),
 		}
 
-		data.setTodos([todo, ...data.todos])
-
-		setTitle('')
+		setTodos([todo, ...todos])
+		setText('')
 	}
 
 	return (
-		<form className='form__create'>
+		<form onSubmit={createTodo} className='form__create'>
 			<input
 				type='text'
-				value={title}
+				value={text}
 				placeholder='Enter a new todo'
 				onChange={handleChange}
 			/>
 
-			<button
-				onClick={handleSubmit}
-				disabled={!title.trim()}
-				className='btn btn--create'
-			>
+			<button disabled={!text.trim()} className='btn btn--create'>
 				<PlusIcon />
 			</button>
 		</form>

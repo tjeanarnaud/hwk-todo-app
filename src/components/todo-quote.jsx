@@ -8,9 +8,16 @@ const TodoQuote = () => {
 	const quote = useRandomQuote()
 
 	return (
-		<blockquote>
-			<p>{quote.text}</p>
-			<cite>-- {quote.author}</cite>
+		<blockquote className='quote'>
+			<div className='quote__content'>
+				<div className='content__opening-mark'></div>
+				<div className='content__closing-mark'></div>
+				{quote.text}
+			</div>
+
+			<cite className='quote__author'>
+				<span>_{quote.author}</span>
+			</cite>
 		</blockquote>
 	)
 }

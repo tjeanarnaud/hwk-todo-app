@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Open+Sans:wght@400;500;600;700&family=Passion+One:wght@400;700&family=Saira+Condensed:wght@400;500;600;700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;600;700&family=Satisfy&display=swap');
 
 @layer base {
 	body {
@@ -22,13 +22,13 @@
 	}
 
 	input {
-		@apply h-12 text-lg text-slate-600 font-medium px-6 bg-black-0 border-none focus:outline-none placeholder:text-slate-700 focus:text-slate-300 placeholder:font-medium;
+		@apply h-12 text-lg text-slate-600 font-medium px-6 bg-black-0 border-none rounded-sm focus:outline-none placeholder:text-slate-700 focus:text-slate-300 placeholder:font-medium;
 	}
 }
 
 @layer components {
 	.btn {
-		@apply w-12 h-12 grid place-items-center text-black-100 hover:text-gray-300 bg-black-60 disabled:bg-slate-800 disabled:text-slate-600;
+		@apply w-12 h-12 grid place-items-center text-black-100 hover:text-gray-300 bg-black-60 rounded-sm disabled:bg-slate-800 disabled:text-slate-600;
 	}
 
 	.btn > svg {

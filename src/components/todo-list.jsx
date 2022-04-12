@@ -1,19 +1,20 @@
-import React, { useState } from 'react'
-
 import { useTodos } from '../useTodos'
+import FlipMove from 'react-flip-move'
 import TodoItem from './todo-item'
 
 import './todo-list.css'
 
 const TodoList = () => {
-	const data = useTodos()
+	const { todos } = useTodos()
 
 	return (
-		<div className='list'>
-			{data.todos.map((todo) => (
-				<TodoItem key={todo.id} {...todo} />
+		<FlipMove className='todo__list' duration={300} easing='ease-in-out'>
+			{todos.map((todo) => (
+				<div key={todo.id}>
+					<TodoItem {...todo} />
+				</div>
 			))}
-		</div>
+		</FlipMove>
 	)
 }
 

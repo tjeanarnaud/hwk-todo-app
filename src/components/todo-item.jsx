@@ -10,40 +10,37 @@ import { useTodos } from '../useTodos'
 
 import './todo-item.css'
 
-const TodoItem = ({ id, name, isDone }) => {
-	const data = useTodos()
+const TodoItem = ({ id, task, isChecked }) => {
+	const { todos, setTodos } = useTodos()
 
-	const [checked, setChecked] = useState(isDone)
+	const [checked, setChecked] = useState(isChecked)
 	const [show, setShow] = useState(false)
-	const [text, setText] = useState(name)
+	const [text, setText] = useState(task)
 
 	const checkTodo = () => {
 		setChecked(!checked)
-		const todo = data.todos.find((item) => item.id === id)
-		todo.isDone = !todo.isDone
 
-		const index = data.todos.findIndex((item) => item.id === id)
-		data.todos[index] = todo
+		const index = todos.findIndex((item) => item.id === id)
+		const todo = todos[index]
+		todo.isChecked = !todo.isChecked
 
-		data.setTodos(data.todos)
+		setTodos(todos)
 	}
 
 	const editTodo = (e) => {
 		e.preventDefault()
 
-		const todo = data.todos.find((item) => item.id === id)
-		todo.name = text
+		const index = todos.findIndex((item) => item.id === id)
+		const todo = todos[index]
+		todo.task = text
 
-		const index = data.todos.findIndex((item) => item.id === id)
-		data.todos[index] = todo
 		setShow(!show)
-
-		data.setTodos(data.todos)
+		setTodos(todos)
 	}
 
 	const deleteTodo = () => {
-		const updatedTodos = [...data.todos].filter((item) => item.id !== id)
-		data.setTodos(updatedTodos)
+		const updatedTodos = [...todos].filter((item) => item.id !== id)
+		setTodos(updatedTodos)
 	}
 
 	return (

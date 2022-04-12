@@ -3,9 +3,6 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				abel: ['Abel', 'sans-serif'],
-				open: ['Open Sans', 'sans-serif'],
-				passion: ['Passion One', 'cursive'],
 				saira: ['Saira Condensed', 'sans-serif'],
 				satisfy: ['Satisfy', 'cursive'],
 			},

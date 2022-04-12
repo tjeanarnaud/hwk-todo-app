@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext, useEffect } from 'react'
 import { useLocalStorage } from './useLocalStorage'
 
 const TodosContext = createContext()
