@@ -1,5 +1,3 @@
-import FlipMove from 'react-flip-move'
-
 import TodoForm from './components/todo-form'
 import TodoList from './components/todo-list'
 import TodoQuote from './components/todo-quote'

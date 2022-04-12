@@ -12,7 +12,7 @@ export function TodosProvider({ children }) {
 
 	useEffect(() => {
 		setTodos(todos)
-	}, [todos])
+	}, [todos, setTodos])
 
 	return (
 		<TodosContext.Provider value={{ todos, setTodos }}>
